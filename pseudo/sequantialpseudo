@@ -1,0 +1,27 @@
+program sequentialSearch
+kamus
+	constant NMAX	: integer <- 100
+	type tabInt array[0..NMAX-1]of integer
+	data			: tabInt
+	i, ndata, cari	: integer
+algoritma
+	input(ndata)
+	for i <- 0 to ndata-1 do
+		input(data[i])
+	endfor
+	input(cari)
+	output(seqSearch(data, ndata, cari))
+endprogram
+
+function seqsearch(a : tabInt, n, cari : integer) -> boolean 
+kamus
+	i : integer
+algoritma
+	while i < n do
+		if a[i] == cari then
+			return true
+		endif
+		i <- i + 1
+	endwhile
+	return false
+endfunction

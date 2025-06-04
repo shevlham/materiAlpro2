@@ -1,0 +1,40 @@
+program binarySearch
+kamus
+	constant NMAX	: integer <- 100
+	type tabInt array[0..NMAX-1]of integer
+	data			: tabInt
+	i, ndata, cari	: integer
+algoritma
+	input(ndata)
+	for i <- 0 to ndata-1 do
+		input(data[i])
+	endfor
+	input(cari)
+	output(binSearch(data, ndata, cari))
+endprogram
+
+
+function binSearch(a : tabInt, n, cari : integer) -> boolean 
+kamus
+	left, mid, right : integer
+algoritma
+	left <- 0
+	right <- n - 1
+	mid <- (left + right) div 2
+    
+	while left <= right and a[mid] != cari do
+		if cari > a[mid] then
+			left <- mid + 1
+		else
+			right =<- mid - 1
+		endif
+		mid <- (left + right) div 2
+	endwhile
+
+	if a[mid] == cari do
+		return true
+	else
+		return false
+	endif
+
+endfunction

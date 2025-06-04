@@ -1,0 +1,41 @@
+program findMinMax
+kamus
+	constant NMAX	: integer <- 100
+	type tabInt array[0...NMAX-1]of integer
+	data			: tabInt
+	i, ndata    	: integer
+algoritma
+	input(ndata)
+	for i <- 0 to ndata-1 do
+		input(data[i])
+	endfor
+	output("min =",min(data, ndata))
+	output("max =",max(data, ndata))
+endprogram
+
+
+function min(a : tabInt, n : integer) -> integer 
+kamus
+	i, min : integer
+algoritma
+	min <- 0
+	for i <- 1 to n-1 do
+		if a[min] > a[i] then
+			min <- i
+		endif
+	endfor
+	return a[min]
+endfunction
+
+function max(a : tabInt, n : integer) -> integer 
+kamus
+	i, max : integer
+algoritma
+	max <- 0
+	for i <- 1 to n-1 do
+		if a[max] > a[i] then
+			max <- i
+		endif
+	endfor
+	return a[max]
+endfunction
