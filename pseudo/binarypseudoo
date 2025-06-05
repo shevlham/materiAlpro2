@@ -26,12 +26,12 @@ algoritma
 		if cari > a[mid] then
 			left <- mid + 1
 		else
-			right =<- mid - 1
+			right <- mid - 1
 		endif
 		mid <- (left + right) div 2
 	endwhile
 
-	if a[mid] == cari do
+	if a[mid] == cari then
 		return true
 	else
 		return false
