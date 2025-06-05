@@ -1,6 +1,6 @@
 program sequentialSearch
 kamus
-	constant NMAX	: integer = 100
+	constant NMAX	: integer <- 100
 	type tabInt array[0..NMAX-1]of integer
 	data			: tabInt
 	i, ndata, cari	: integer
